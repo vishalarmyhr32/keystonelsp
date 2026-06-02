@@ -811,11 +811,13 @@ gap:15px;
 }
 
 .contact-form input,
-.contact-form textarea{
+.contact-form textarea,
+.contact-form select{
 padding:15px;
 border:1px solid #ddd;
 border-radius:10px;
 font-size:15px;
+font-family:inherit;
 }
 
 .contact-form textarea{
@@ -841,6 +843,43 @@ grid-template-columns:1fr;
 
 }
 
+.success-popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.6);
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.success-box{
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    max-width:450px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.success-box h3{
+    color:#0B1F3A;
+    margin-bottom:15px;
+}
+
+.success-box button{
+    margin-top:15px;
+    background:#F59E0B;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    cursor:pointer;
+}
+
 </style>
 
 <div class="contact-grid">
@@ -849,7 +888,7 @@ grid-template-columns:1fr;
 
 <h3>Get In Touch</h3>
 
-<p><strong>Phone:</strong> +1 (000) 000-0000</p>
+<p><strong>Phone:</strong> +1 (704) 907-7248</p>
 
 <p><strong>Email:</strong> admin@keystonelsp.com</p>
 
@@ -863,18 +902,92 @@ Whether you need freight coordination, transportation management, or logistics s
 
 <div>
 
-<form class="contact-form">
+<form
+id="quoteForm"
+class="contact-form"
+action="https://formsubmit.co/ajax/admin@keystonelsp.com"
+method="POST">
 
-<input type="text" placeholder="Your Name">
+<!-- FormSubmit Settings -->
 
-<input type="email" placeholder="Your Email">
+<input
+type="hidden"
+name="_subject"
+value="New Freight Quote Request - Keystone Logistics">
 
-<input type="tel" placeholder="Phone Number">
+<input
+type="hidden"
+name="_captcha"
+value="false">
 
-<textarea placeholder="Tell us about your shipment requirements"></textarea>
+<input
+type="hidden"
+name="_template"
+value="table">
+
+<!-- Customer Details -->
+
+<input
+type="text"
+name="name"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+name="email"
+placeholder="Your Email"
+required>
+
+<input
+type="tel"
+name="phone"
+placeholder="Phone Number"
+required>
+
+<input
+type="text"
+name="company"
+placeholder="Company Name"
+required>
+
+<select
+name="service"
+required>
+
+<option value="">
+Select Service Required
+</option>
+
+<option value="Freight Brokerage">
+Freight Brokerage
+</option>
+
+<option value="Transportation Management">
+Transportation Management
+</option>
+
+<option value="Cross-Border Freight">
+Cross-Border Freight
+</option>
+
+<option value="Expedited Freight">
+Expedited Freight
+</option>
+
+<option value="Other">
+Other
+</option>
+
+</select>
+
+<textarea
+name="message"
+placeholder="Tell us about your shipment requirements"
+required></textarea>
 
 <button type="submit">
-Send Inquiry
+Request Quote
 </button>
 
 </form>
@@ -883,6 +996,17 @@ Send Inquiry
 
 </div>
 
+</div>
+
+<div id="success-popup" class="success-popup">
+    <div class="success-box">
+        <h3>✅ Request Submitted Successfully</h3>
+        <p>
+            Thank you for contacting Keystone Logistics Management Inc.
+            Our team will contact you shortly.
+        </p>
+        <button onclick="closePopup()">OK</button>
+    </div>
 </div>
 
 </section>
@@ -1037,7 +1161,7 @@ Third-Party Logistics and Transportation Management solutions serving businesses
 
 <h4>Contact</h4>
 
-<p>📞 +1 (000) 000-0000</p>
+<p>📞 +1 (704) 907-7248</p>
 
 <p>✉ admin@keystonelsp.com</p>
 
@@ -1058,7 +1182,7 @@ Third-Party Logistics and Transportation Management solutions serving businesses
 <!-- FLOATING CALL BUTTON -->
 
 <a
-href="tel:+10000000000"
+href="tel:+17049077248"
 class="call-float">
 
 📞 Call Us
@@ -1068,7 +1192,7 @@ class="call-float">
 <!-- FLOATING WHATSAPP BUTTON -->
 
 <a
-href="https://wa.me/10000000000"
+href="https://wa.me/+17049077248"
 class="whatsapp-float"
 target="_blank">
 
@@ -1102,6 +1226,43 @@ navLinks.classList.remove('active');
 });
 
 });
+
+</script>
+
+<script>
+
+const form = document.getElementById("quoteForm");
+
+form.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const response = await fetch(form.action,{
+        method:"POST",
+        body:formData
+    });
+
+    if(response.ok){
+
+        document.getElementById("success-popup").style.display="flex";
+
+        form.reset();
+
+    }else{
+
+        alert("Something went wrong. Please try again.");
+
+    }
+
+});
+
+function closePopup(){
+
+    document.getElementById("success-popup").style.display="none";
+
+}
 
 </script>
 
