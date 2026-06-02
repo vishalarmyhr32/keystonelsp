@@ -1,319 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>KEYSTONE LOGISTICS MANAGEMENT INC.</title>
+<title>Keystone Logistics Management Inc.</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
-    --primary:#0B1F3A;
-    --secondary:#1E4E8C;
-    --accent:#F59E0B;
-    --light:#ffffff;
-    --gray:#f5f7fa;
-    --text:#1f2937;
+--primary:#0B1F3A;
+--secondary:#1E4E8C;
+--accent:#F59E0B;
+--white:#ffffff;
+--light:#f7f9fc;
+--text:#1f2937;
+--shadow:0 15px 40px rgba(0,0,0,.08);
 }
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Inter',sans-serif;
-    color:var(--text);
-    overflow-x:hidden;
+font-family:'Inter',sans-serif;
+color:var(--text);
+overflow-x:hidden;
+background:#fff;
 }
 
-/* NAVBAR */
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+section{
+padding:90px 0;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:55px;
+}
+
+.section-title h2{
+font-size:2.5rem;
+color:var(--primary);
+margin-bottom:15px;
+}
+
+.section-title p{
+max-width:700px;
+margin:auto;
+color:#666;
+}
+
+/* HEADER */
 
 header{
-    position:fixed;
-    top:0;
-    width:100%;
-    z-index:1000;
-    background:rgba(11,31,58,0.95);
-    backdrop-filter:blur(10px);
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+background:rgba(11,31,58,.96);
+backdrop-filter:blur(10px);
 }
 
 .navbar{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
 }
 
 .logo{
-    color:white;
-    font-weight:800;
-    font-size:1.2rem;
-    font-family:'Montserrat',sans-serif;
+color:white;
+font-weight:800;
+font-size:1.25rem;
+line-height:1.1;
+}
+
+.logo span{
+display:block;
+font-size:.78rem;
+font-weight:400;
+letter-spacing:1px;
 }
 
 .nav-links{
-    display:flex;
-    gap:25px;
+display:flex;
+gap:28px;
 }
 
 .nav-links a{
-    color:white;
-    text-decoration:none;
-    transition:.3s;
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
 }
 
 .nav-links a:hover{
-    color:var(--accent);
+color:var(--accent);
 }
 
 .quote-btn{
-    background:var(--accent);
-    color:white;
-    padding:12px 22px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:600;
+background:var(--accent);
+color:white;
+padding:12px 24px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.quote-btn:hover{
+transform:translateY(-2px);
+}
+
+.menu-toggle{
+display:none;
+font-size:30px;
+color:white;
+cursor:pointer;
 }
 
 /* HERO */
 
 .hero{
-    height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1600&q=80');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:white;
+height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1600&q=80');
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
 }
 
 .hero-content{
-    max-width:850px;
-    padding:20px;
+max-width:900px;
+padding:20px;
 }
 
 .hero h1{
-    font-size:4rem;
-    font-family:'Montserrat',sans-serif;
-    margin-bottom:20px;
+font-size:4rem;
+font-weight:800;
+margin-bottom:20px;
+line-height:1.15;
 }
 
 .hero p{
-    font-size:1.2rem;
-    margin-bottom:35px;
+font-size:1.2rem;
+max-width:750px;
+margin:auto;
+margin-bottom:35px;
+line-height:1.8;
 }
 
 .hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
 }
 
 .btn{
-    padding:14px 30px;
-    border-radius:40px;
-    text-decoration:none;
-    font-weight:600;
-    transition:.3s;
+display:inline-block;
+padding:15px 30px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
 }
 
 .btn-primary{
-    background:var(--accent);
-    color:white;
+background:var(--accent);
+color:white;
 }
 
 .btn-secondary{
-    border:2px solid white;
-    color:white;
+border:2px solid white;
+color:white;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
+transform:translateY(-3px);
 }
 
-/* SECTIONS */
+/* TRUST BAR */
 
-section{
-    padding:90px 20px;
+.trust-bar{
+background:var(--primary);
+padding:35px 0;
 }
 
-.container{
-    max-width:1200px;
-    margin:auto;
+.trust-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+text-align:center;
+color:white;
 }
 
-.section-title{
-    text-align:center;
-    margin-bottom:50px;
-}
-
-.section-title h2{
-    font-size:2.5rem;
-    color:var(--primary);
-    font-family:'Montserrat',sans-serif;
+.trust-item h3{
+font-size:1.15rem;
+margin-bottom:8px;
 }
 
 /* ABOUT */
 
 .about{
-    background:white;
+background:white;
 }
 
-.about p{
-    text-align:center;
-    max-width:900px;
-    margin:auto;
-    font-size:1.1rem;
-    line-height:1.8;
+.about-content{
+max-width:900px;
+margin:auto;
+text-align:center;
+}
+
+.about-content p{
+font-size:1.1rem;
+line-height:1.9;
+color:#555;
 }
 
 /* SERVICES */
 
 .services{
-    background:var(--gray);
+background:var(--light);
 }
 
 .service-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
 }
 
-.card{
-    background:white;
-    padding:35px;
-    border-radius:16px;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-    transition:.3s;
+.service-card{
+background:white;
+padding:35px;
+border-radius:18px;
+box-shadow:var(--shadow);
+transition:.3s;
 }
 
-.card:hover{
-    transform:translateY(-10px);
+.service-card:hover{
+transform:translateY(-8px);
 }
 
-.card h3{
-    margin-bottom:15px;
-    color:var(--primary);
+.service-card h3{
+margin-bottom:15px;
+color:var(--primary);
+font-size:1.3rem;
 }
 
-/* WHY CHOOSE US */
-
-.why{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-    align-items:center;
+.service-card p{
+color:#666;
+line-height:1.8;
 }
 
-.why img{
-    width:100%;
-    border-radius:20px;
+/* WHY CHOOSE */
+
+.why-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
 }
 
-.why ul{
-    list-style:none;
+.why-image img{
+width:100%;
+border-radius:20px;
+box-shadow:var(--shadow);
 }
 
-.why li{
-    padding:12px 0;
-    font-size:1.1rem;
+.why-content h2{
+font-size:2.4rem;
+margin-bottom:25px;
+color:var(--primary);
 }
 
-/* STATS */
-
-.stats{
-    background:var(--primary);
-    color:white;
+.why-content ul{
+list-style:none;
 }
 
-.stats-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    text-align:center;
-    gap:20px;
+.why-content li{
+padding:12px 0;
+font-size:1.1rem;
 }
 
-.stat h3{
-    font-size:3rem;
-    color:var(--accent);
+/* COMMITMENT */
+
+.commitment{
+background:var(--light);
+}
+
+.commitment-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.commitment-box{
+background:white;
+padding:30px;
+text-align:center;
+border-radius:18px;
+box-shadow:var(--shadow);
+}
+
+.commitment-box h4{
+color:var(--primary);
+margin-bottom:10px;
 }
 
 /* CTA */
 
 .cta{
-    text-align:center;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    color:white;
+background:
+linear-gradient(135deg,var(--primary),var(--secondary));
+color:white;
+text-align:center;
 }
 
 .cta h2{
-    margin-bottom:20px;
-    font-size:2.5rem;
+font-size:2.8rem;
+margin-bottom:20px;
 }
 
-/* CONTACT */
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-}
-
-form{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-input,textarea{
-    padding:14px;
-    border:1px solid #ddd;
-    border-radius:8px;
-}
-
-textarea{
-    height:150px;
-}
-
-button{
-    padding:15px;
-    border:none;
-    background:var(--accent);
-    color:white;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-/* FOOTER */
-
-footer{
-    background:var(--primary);
-    color:white;
-    text-align:center;
-    padding:35px 20px;
-}
-
-footer p{
-    margin:8px 0;
+.cta p{
+max-width:700px;
+margin:auto;
+margin-bottom:35px;
+line-height:1.8;
 }
 
 /* MOBILE */
@@ -321,30 +361,62 @@ footer p{
 @media(max-width:768px){
 
 .hero h1{
-    font-size:2.4rem;
+font-size:2.4rem;
+}
+
+.trust-grid{
+grid-template-columns:1fr;
+}
+
+.why-grid{
+grid-template-columns:1fr;
+}
+
+.menu-toggle{
+display:block;
 }
 
 .nav-links{
-    display:none;
+display:none;
+position:absolute;
+top:80px;
+left:0;
+width:100%;
+background:#0B1F3A;
+flex-direction:column;
+padding:25px;
+text-align:center;
 }
 
-.why,
-.contact-grid{
-    grid-template-columns:1fr;
+.nav-links.active{
+display:flex;
+}
+
+.quote-btn{
+display:none;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
+
+<div class="container">
+
 <div class="navbar">
 
 <div class="logo">
-KEYSTONE LOGISTICS MANAGEMENT INC.
+KEYSTONE LOGISTICS
+<span>MANAGEMENT INC.</span>
+</div>
+
+<div class="menu-toggle">
+☰
 </div>
 
 <div class="nav-links">
@@ -354,9 +426,14 @@ KEYSTONE LOGISTICS MANAGEMENT INC.
 <a href="#contact">Contact</a>
 </div>
 
-<a href="#contact" class="quote-btn">Get Quote</a>
+<a href="#contact" class="quote-btn">
+Get Quote
+</a>
 
 </div>
+
+</div>
+
 </header>
 
 <!-- HERO -->
@@ -365,22 +442,57 @@ KEYSTONE LOGISTICS MANAGEMENT INC.
 
 <div class="hero-content">
 
-<h1>Delivering Logistics Solutions You Can Trust</h1>
+<h1>
+Reliable Transportation Management Across Canada & North America
+</h1>
 
 <p>
-Transportation, Freight, Shipping & Supply Chain Management
-Across Canada & North America.
+Keystone Logistics Management Inc. is a third-party logistics and transportation management provider helping businesses move freight efficiently through a trusted carrier network across Canada and North America.
 </p>
 
 <div class="hero-buttons">
 
 <a href="#contact" class="btn btn-primary">
-Get a Quote
+Get Freight Quote
 </a>
 
 <a href="#services" class="btn btn-secondary">
 Our Services
 </a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TRUST BAR -->
+
+<section class="trust-bar">
+
+<div class="container">
+
+<div class="trust-grid">
+
+<div class="trust-item">
+<h3>Canada & North America Coverage</h3>
+<p>Wide transportation network</p>
+</div>
+
+<div class="trust-item">
+<h3>Customized Solutions</h3>
+<p>Tailored freight strategies</p>
+</div>
+
+<div class="trust-item">
+<h3>24/7 Coordination</h3>
+<p>Shipment support when needed</p>
+</div>
+
+<div class="trust-item">
+<h3>Transparent Communication</h3>
+<p>Clear updates and visibility</p>
+</div>
 
 </div>
 
@@ -396,14 +508,18 @@ Our Services
 
 <div class="section-title">
 <h2>Who We Are</h2>
+<p>Your trusted logistics management partner.</p>
 </div>
 
+<div class="about-content">
+
 <p>
-Keystone Logistics Management Inc. provides dependable transportation,
-freight, shipping and supply chain solutions designed to keep businesses
-moving efficiently. Our commitment to reliability, transparency and
-customer satisfaction ensures every shipment is handled with precision.
+Keystone Logistics Management Inc. specializes in third-party logistics, freight coordination, and transportation management solutions. We connect shippers with dependable carrier partners, helping businesses move freight efficiently throughout Canada and North America.
+<br><br>
+Our focus is simple: responsive communication, reliable service, and transportation solutions tailored to each customer’s unique requirements.
 </p>
+
+</div>
 
 </div>
 
@@ -417,28 +533,50 @@ customer satisfaction ensures every shipment is handled with precision.
 
 <div class="section-title">
 <h2>Our Services</h2>
+<p>Transportation and logistics solutions designed around your business needs.</p>
 </div>
 
 <div class="service-grid">
 
-<div class="card">
-<h3>🚚 Freight Transportation</h3>
-<p>Reliable FTL and LTL transportation solutions.</p>
+<div class="service-card">
+<h3>Freight Brokerage & Transportation Management</h3>
+<p>
+Professional coordination of Full Truckload (FTL) and Less Than Truckload (LTL) freight through trusted carrier partners.
+</p>
 </div>
 
-<div class="card">
-<h3>📦 Shipping Services</h3>
-<p>Domestic and international freight shipping.</p>
+<div class="service-card">
+<h3>Cross-Border Freight</h3>
+<p>
+Efficient freight movement between Canada and the United States with reliable coordination and communication.
+</p>
 </div>
 
-<div class="card">
-<h3>🏭 Warehousing</h3>
-<p>Secure storage and inventory management services.</p>
+<div class="service-card">
+<h3>Supply Chain Support</h3>
+<p>
+Transportation planning and logistics support to improve operational efficiency and freight visibility.
+</p>
+</div>
+<div class="service-card">
+<h3>Dedicated Logistics Solutions</h3>
+<p>
+Customized transportation strategies designed to support growing businesses, seasonal demand, and specialized freight requirements.
+</p>
 </div>
 
-<div class="card">
-<h3>🌎 Supply Chain Solutions</h3>
-<p>End-to-end logistics planning and execution.</p>
+<div class="service-card">
+<h3>Expedited Freight Services</h3>
+<p>
+Time-sensitive transportation solutions when delivery speed and reliability are critical to your operations.
+</p>
+</div>
+
+<div class="service-card">
+<h3>Carrier Network Management</h3>
+<p>
+Access to a dependable network of transportation partners across Canada and North America.
+</p>
 </div>
 
 </div>
@@ -447,29 +585,44 @@ customer satisfaction ensures every shipment is handled with precision.
 
 </section>
 
-<!-- WHY -->
+<!-- WHY CHOOSE US -->
 
 <section>
 
 <div class="container">
 
-<div class="why">
+<div class="why-grid">
 
-<img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1200&q=80">
+<div class="why-image">
 
-<div>
+<img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1200&q=80" alt="Logistics">
 
-<h2 style="margin-bottom:20px;color:#0B1F3A;">
-Why Choose Keystone Logistics?
+</div>
+
+<div class="why-content">
+
+<h2>
+Why to Trust Keystone
 </h2>
 
 <ul>
-<li>✔ Reliable Service</li>
-<li>✔ On-Time Deliveries</li>
-<li>✔ Experienced Logistics Team</li>
-<li>✔ Customer-Focused Solutions</li>
-<li>✔ Nationwide Coverage</li>
-<li>✔ Competitive Pricing</li>
+
+<li>✔ Dedicated Logistics Coordination</li>
+
+<li>✔ Carrier Network Across North America</li>
+
+<li>✔ Competitive Freight Rates</li>
+
+<li>✔ Personalized Customer Support</li>
+
+<li>✔ Responsive Communication</li>
+
+<li>✔ Flexible Transportation Solutions</li>
+
+<li>✔ Scalable Logistics Support</li>
+
+<li>✔ Customer-First Service Approach</li>
+
 </ul>
 
 </div>
@@ -480,32 +633,52 @@ Why Choose Keystone Logistics?
 
 </section>
 
-<!-- STATS -->
+<!-- COMMITMENT -->
 
-<section class="stats">
+<section class="commitment">
 
 <div class="container">
 
-<div class="stats-grid">
+<div class="section-title">
 
-<div class="stat">
-<h3>500+</h3>
-<p>Deliveries</p>
+<h2>Our Commitment</h2>
+
+<p>
+The principles that guide every shipment and customer relationship.
+</p>
+
 </div>
 
-<div class="stat">
-<h3>100+</h3>
-<p>Business Clients</p>
+<div class="commitment-grid">
+
+<div class="commitment-box">
+<h4>Professional Service</h4>
+<p>Dedicated support throughout the transportation process.</p>
 </div>
 
-<div class="stat">
-<h3>24/7</h3>
-<p>Support</p>
+<div class="commitment-box">
+<h4>Reliable Carrier Network</h4>
+<p>Carefully selected transportation partners.</p>
 </div>
 
-<div class="stat">
-<h3>99%</h3>
-<p>Satisfaction</p>
+<div class="commitment-box">
+<h4>Transparent Pricing</h4>
+<p>Clear communication and competitive freight rates.</p>
+</div>
+
+<div class="commitment-box">
+<h4>Responsive Communication</h4>
+<p>Fast responses and proactive shipment updates.</p>
+</div>
+
+<div class="commitment-box">
+<h4>Customer Focus</h4>
+<p>Solutions designed around your business requirements.</p>
+</div>
+
+<div class="commitment-box">
+<h4>Long-Term Partnerships</h4>
+<p>Building trusted relationships through dependable service.</p>
 </div>
 
 </div>
@@ -521,17 +694,40 @@ Why Choose Keystone Logistics?
 <div class="container">
 
 <h2>
-Ready To Move Your Business Forward?
+Ready To Move Your Freight?
 </h2>
 
-<p style="margin-bottom:30px;">
-Partner with Keystone Logistics Management Inc.
-for dependable transportation and logistics services.
+<p>
+Partner with Keystone Logistics Management Inc. for dependable transportation management and logistics coordination solutions.
 </p>
 
 <a href="#contact" class="btn btn-primary">
-Request a Quote
+Request A Quote
 </a>
+
+</div>
+
+</section>
+
+<!-- MAP -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Our Location</h2>
+
+<p>
+Serving clients throughout Canada and North America.
+</p>
+
+</div>
+
+<div align="center">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1290.6173862192295!2d-79.70052792350299!3d43.783011550271944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b22d4ca4e2bad%3A0x45b446e93c19995c!2s28%20Utopia%20Way%2C%20Brampton%2C%20ON%20L6P%204A6%2C%20Canada!5e1!3m2!1sen!2sin!4v1780364166733!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
 
 </div>
 
@@ -544,24 +740,99 @@ Request a Quote
 <div class="container">
 
 <div class="section-title">
+
 <h2>Contact Us</h2>
+
+<p>
+Let's discuss your transportation and logistics requirements.
+</p>
+
 </div>
+
+<style>
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.contact-info{
+background:#f7f9fc;
+padding:40px;
+border-radius:20px;
+}
+
+.contact-info h3{
+margin-bottom:20px;
+color:#0B1F3A;
+}
+
+.contact-info p{
+margin-bottom:15px;
+line-height:1.8;
+}
+
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:15px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:15px;
+}
+
+.contact-form textarea{
+height:160px;
+resize:none;
+}
+
+.contact-form button{
+background:#F59E0B;
+color:white;
+border:none;
+padding:16px;
+border-radius:10px;
+font-weight:600;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
 
 <div class="contact-grid">
 
-<div>
+<div class="contact-info">
 
 <h3>Get In Touch</h3>
 
-<br>
-
 <p><strong>Phone:</strong> +1 (000) 000-0000</p>
-<p><strong>Email:</strong> info@keystonelogistics.com</p>
-<p><strong>Address:</strong> Your Business Address Here</p>
+
+<p><strong>Email:</strong> admin@keystonelsp.com</p>
+
+<p><strong>Address:</strong> 28 Utopia Way, Brampton, Ontario, L6P 4A6, Canada </p>
+
+<p>
+Whether you need freight coordination, transportation management, or logistics support, our team is ready to help.
+</p>
 
 </div>
 
-<form>
+<div>
+
+<form class="contact-form">
 
 <input type="text" placeholder="Your Name">
 
@@ -569,7 +840,7 @@ Request a Quote
 
 <input type="tel" placeholder="Phone Number">
 
-<textarea placeholder="Message"></textarea>
+<textarea placeholder="Tell us about your shipment requirements"></textarea>
 
 <button type="submit">
 Send Inquiry
@@ -581,20 +852,227 @@ Send Inquiry
 
 </div>
 
+</div>
+
 </section>
+<!-- FOOTER -->
 
 <footer>
 
-<h3>KEYSTONE LOGISTICS MANAGEMENT INC.</h3>
+<style>
 
-<p>Transportation • Shipping • Logistics</p>
+footer{
+background:#0B1F3A;
+color:white;
+padding:60px 20px 30px;
+}
+
+.footer-grid{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:40px;
+margin-bottom:40px;
+}
+
+.footer-logo h3{
+font-size:1.4rem;
+margin-bottom:15px;
+}
+
+.footer-logo p{
+line-height:1.8;
+color:#d1d5db;
+}
+
+.footer-links h4,
+.footer-contact h4{
+margin-bottom:15px;
+}
+
+.footer-links ul{
+list-style:none;
+}
+
+.footer-links ul li{
+margin-bottom:10px;
+}
+
+.footer-links a{
+color:#d1d5db;
+text-decoration:none;
+}
+
+.footer-links a:hover{
+color:#F59E0B;
+}
+
+.footer-contact p{
+margin-bottom:10px;
+color:#d1d5db;
+}
+
+.footer-bottom{
+text-align:center;
+padding-top:25px;
+border-top:1px solid rgba(255,255,255,.1);
+color:#d1d5db;
+}
+
+/* FLOATING BUTTONS */
+
+.whatsapp-float,
+.call-float{
+position:fixed;
+right:20px;
+padding:14px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+color:white;
+display:flex;
+align-items:center;
+gap:8px;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+z-index:9999;
+transition:.3s;
+}
+
+.whatsapp-float:hover,
+.call-float:hover{
+transform:translateY(-3px);
+}
+
+.call-float{
+background:#0B1F3A;
+bottom:95px;
+}
+
+.whatsapp-float{
+background:#25D366;
+bottom:25px;
+}
+
+@media(max-width:768px){
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.whatsapp-float,
+.call-float{
+padding:12px 18px;
+font-size:14px;
+}
+
+}
+
+</style>
+
+<div class="footer-grid">
+
+<div class="footer-logo">
+
+<h3>
+KEYSTONE LOGISTICS MANAGEMENT INC.
+</h3>
 
 <p>
-© 2026 Keystone Logistics Management Inc.
-All Rights Reserved.
+Third-Party Logistics and Transportation Management solutions serving businesses across Canada and North America.
 </p>
 
+</div>
+
+<div class="footer-links">
+
+<h4>Quick Links</h4>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#services">Services</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-contact">
+
+<h4>Contact</h4>
+
+<p>📞 +1 (000) 000-0000</p>
+
+<p>✉ admin@keystonelsp.com</p>
+
+<p>📍 28 Utopia Way, Brampton, Ontario, L6P 4A6, Canada</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 Keystone Logistics Management Inc. All Rights Reserved.
+
+</div>
+
 </footer>
+
+<!-- FLOATING CALL BUTTON -->
+
+<a
+href="tel:+10000000000"
+class="call-float">
+
+📞 Call Us
+
+</a>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+
+<a
+href="https://wa.me/10000000000"
+class="whatsapp-float"
+target="_blank">
+
+💬 WhatsApp
+
+</a>
+
+<!-- MOBILE MENU SCRIPT -->
+
+<script>
+
+const menuToggle =
+document.querySelector('.menu-toggle');
+
+const navLinks =
+document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+
+navLinks.classList.toggle('active');
+
+});
+
+document.querySelectorAll('.nav-links a')
+.forEach(link => {
+
+link.addEventListener('click', () => {
+
+navLinks.classList.remove('active');
+
+});
+
+});
+
+</script>
 
 </body>
 </html>
