@@ -283,11 +283,10 @@ footer{background:var(--ink);color:#fff;padding:64px 24px 28px;}
 .footer-bottom{display:flex;align-items:center;justify-content:space-between;font-size:.78rem;color:rgba(255,255,255,.22);}
 
 /* ===================== FLOATING BTNS ===================== */
-.float-wrap{position:fixed;right:20px;bottom:24px;display:flex;flex-direction:column;gap:10px;z-index:9999;}
-.float-btn{display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:50px;text-decoration:none;font-weight:600;font-size:.83rem;color:#fff;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:.25s;white-space:nowrap;}
-.float-btn:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.3);}
-.float-btn.wa{background:#25D366;}
-.float-btn.cl{background:var(--navy);}
+.float-wrap{position:fixed;right:20px;bottom:24px;display:flex;flex-direction:column;gap:12px;z-index:9999;align-items:center;}
+.float-btn-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,.3);transition:.25s;}
+.float-btn-icon:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.4);}
+.float-btn-icon img{width:56px;height:56px;border-radius:50%;display:block;}
 
 /* ===================== POPUP ===================== */
 .success-popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:99999;justify-content:center;align-items:center;padding:20px;}
@@ -690,8 +689,12 @@ footer{background:var(--ink);color:#fff;padding:64px 24px 28px;}
 
 <!-- =================== FLOATING BUTTONS =================== -->
 <div class="float-wrap">
-  <a href="tel:+17049077248" class="float-btn cl">📞 Call Us</a>
-  <a href="https://wa.me/+17049077248" class="float-btn wa" target="_blank">💬 WhatsApp</a>
+  <a href="tel:+17049077248" class="float-btn-icon" title="Call Us">
+    <img src="telephone.png" alt="Call Us">
+  </a>
+  <a href="https://wa.me/919759497060" target="_blank" class="float-btn-icon" title="WhatsApp">
+    <img src="whatsapp_icon.png" alt="WhatsApp">
+  </a>
 </div>
 
 <!-- =================== SUCCESS POPUP =================== -->
